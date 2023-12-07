@@ -1,10 +1,8 @@
 import { NavLink, useLocation } from "react-router-dom";
-import s from "../styles/LeftSideBar.module.css";
+import s from "../../styles/shared/LeftSideBar.module.css";
 
 const LeftSideBar = () => {
   const { pathname } = useLocation();
-
-  console.log(pathname);
 
   return (
     <nav className={s.leftSideBar}>

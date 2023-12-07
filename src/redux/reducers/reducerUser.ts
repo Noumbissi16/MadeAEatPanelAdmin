@@ -1,7 +1,15 @@
 import { IAction, IUser } from "../../type";
 
 const initialState = {
-  user: {} as IUser,
+  // user: {} as IUser,
+  user: {
+    id: 1,
+    username: "Ervane Kuitche",
+    email: "ervanekuitche@gmail.com",
+    password: "123456789",
+    isAuthenticated: true,
+    img: "/assets/images/bafoussam.jpg",
+  },
 };
 
 const reducerUser = (state = initialState, action: IAction) => {
