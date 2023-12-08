@@ -28,8 +28,8 @@ function App() {
       <Route element={<RootLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="/commandes" element={<Commande />} />
-        <Route path="/restaurants" element={<Restaurant />} />
         <Route path="/utilisateurs" element={<Utilisateur />} />
+        <Route path="/restaurants" element={<Restaurant />} />
         <Route
           path="/restaurants/restaurant/:id"
           element={<SingleRestaurant />}

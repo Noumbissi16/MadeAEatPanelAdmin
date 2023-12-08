@@ -10,6 +10,7 @@
 :root {
   --white: #fff;
   --black: #000;
+  --blueBlack: #25313c;
   /* primary colors */
   --primary-100: #cff3da;
   --primary-200: #9fe6b5;
@@ -36,4 +37,13 @@ body {
 .active {
   border-left: 4px solid var(--white);
   color: var(--white);
+}
+.title {
+  color: var(--blueBlack);
+  font-family: Montserrat;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin-bottom: 20px;
 }
