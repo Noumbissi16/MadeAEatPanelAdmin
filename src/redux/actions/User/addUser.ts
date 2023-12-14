@@ -1,4 +1,4 @@
-import { INewUser } from "../../../type";
+import { INewUser } from "../../../types";
 import { ADD_USER } from "../../constants";
 
 export const addUser = (user: INewUser) => {

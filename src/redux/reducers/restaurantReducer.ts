@@ -1,5 +1,5 @@
 import { restaurantData } from "../../../public/restaurantData";
-import { IAction } from "../../type";
+import { IAction } from "../../types";
 
 const initialState = restaurantData;
 

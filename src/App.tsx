@@ -30,10 +30,7 @@ function App() {
         <Route path="/commandes" element={<Commande />} />
         <Route path="/utilisateurs" element={<Utilisateur />} />
         <Route path="/restaurants" element={<Restaurant />} />
-        <Route
-          path="/restaurants/restaurant/:id"
-          element={<SingleRestaurant />}
-        />
+        <Route path="/restaurants/:id" element={<SingleRestaurant />} />
         <Route path="/commandes/commande/:id/facture" element={<Facture />} />
       </Route>
     </Routes>

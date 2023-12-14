@@ -1,0 +1,168 @@
+@import url("../../global.css");
+
+.main {
+  margin-top: 30px;
+  display: flex;
+  gap: 24px;
+}
+
+.imgResto {
+  width: 328px;
+  height: 231px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  object-fit: cover;
+  /* background: url(<path-to-image>), lightgray 50% / cover no-repeat; */
+}
+
+.restoInfo {
+  border: 1px solid var(--primary-200);
+  border-radius: 24px;
+  width: 328px;
+  height: 231px;
+  overflow: hidden;
+  padding: 30px;
+}
+
+.adminContainer {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  gap: 12px;
+}
+
+.adminImg {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  object-fit: cover;
+}
+.adminNom {
+  color: var(--black);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 4px;
+}
+
+.adminEmail {
+  color: var(--light-grey);
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.seperator {
+  border: 0.125px solid var(--extraLight-grey);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.restoFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.nomResto {
+  overflow: hidden;
+  color: var(--black);
+  text-overflow: ellipsis;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 30px */
+  letter-spacing: 0.4px;
+}
+
+.town {
+  color: var(--tuto-grey);
+  font-family: Montserrat;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.localisation {
+  color: var(--grey-grey, #6d7d8b);
+  font-family: Montserrat;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%; /* 14.85px */
+}
+
+/* Menu section */
+
+.menuSection {
+  margin: 30px 0;
+}
+
+
+
+.menuCardContainer {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* Card */
+
+.card {
+  width: 328px;
+  height: 280px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gradientContainer {
+  padding: 20px;
+  border-radius: 0px 0px 8px 8px;
+  background: linear-gradient(180deg, rgba(33, 33, 33, 0.05) 0%, #313131 100%);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 57px;
+}
+
+.gradientContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nomRestoCard {
+  overflow: hidden;
+  color: var(--white, #fff);
+  text-overflow: ellipsis;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.townCard {
+  color: var(--grey-light-grey, #bbc8d4);
+  font-family: Montserrat;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 10px */
+}

@@ -1,4 +1,4 @@
-import { IAction, IUser } from "../../type";
+import { IAction, IUser } from "../../types";
 
 const initialState = {
   // user: {} as IUser,
