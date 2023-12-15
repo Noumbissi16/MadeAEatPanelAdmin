@@ -1,4 +1,4 @@
-import { restaurantData } from "../../../public/restaurantData";
+import { restaurantData } from "../../../public/data/restaurantData";
 import { IAction } from "../../types";
 
 const initialState = restaurantData;

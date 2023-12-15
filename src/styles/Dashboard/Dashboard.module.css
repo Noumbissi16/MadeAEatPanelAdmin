@@ -1,0 +1,85 @@
+@import url("/src/global.css");
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.welcomeMsg {
+  color: var(--tuto-grey);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: -20px;
+}
+
+.statsSection {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.card {
+  padding: 25px;
+  border-radius: 24px;
+  border: 1px solid var(--primary-200);
+  width: 328px;
+  height: 165px;
+  flex-shrink: 0;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  color: var(--tuto-grey);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.status {
+  color: var(--grey);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 20px;
+}
+
+.value {
+  color: var(--blueBlack);
+  font-family: Montserrat;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 5px;
+}
+
+.imgUser {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.msgSectionTitle {
+  color: var(--blueBlack);
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 15px;
+}
