@@ -1,26 +1,31 @@
 @import url("../../global.css");
 
+@media screen and (min-width: 600px) {
+}
+
 .main {
   margin-top: 30px;
   display: flex;
   gap: 24px;
+  flex-wrap: wrap;
 }
 
 .imgResto {
-  width: 328px;
+  max-width: 328px;
   height: 231px;
   flex-shrink: 0;
   border-radius: 24px;
   object-fit: cover;
-  /* background: url(<path-to-image>), lightgray 50% / cover no-repeat; */
+  width: 78vw;
 }
 
 .restoInfo {
   border: 1px solid var(--primary-200);
   border-radius: 24px;
-  width: 328px;
+  max-width: 328px;
   height: 231px;
   overflow: hidden;
+  width: 78vw;
   padding: 30px;
 }
 
@@ -106,8 +111,6 @@
   margin: 30px 0;
 }
 
-
-
 .menuCardContainer {
   display: flex;
   gap: 25px;
@@ -117,8 +120,9 @@
 /* Card */
 
 .card {
-  width: 328px;
+  max-width: 328px;
   height: 280px;
+  width: 78vw;
   flex-shrink: 0;
   border-radius: 8px;
   overflow: hidden;
