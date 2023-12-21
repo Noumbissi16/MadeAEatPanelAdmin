@@ -1,0 +1,25 @@
+@import url("/src/global.css");
+
+.img {
+  width: 45px;
+  aspect-ratio: 1/1; /* Set the aspect ratio to 1:1 for a square shape */
+  flex-shrink: 0;
+  border-radius: 50%; /* Use 50% for a circular shape */
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputContainer {
+  position: relative;
+  align-self: flex-end;
+}
+
+.sIcon {
+  position: absolute;
+  left: 30px;
+  top: calc(26%);
+}

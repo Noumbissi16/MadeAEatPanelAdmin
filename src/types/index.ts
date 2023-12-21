@@ -42,3 +42,23 @@ export type IRestaurant = {
   horraire: string;
   menu: MenuItem[];
 };
+
+export type Column = {
+  Header: string;
+  accessor: string;
+};
+
+export type TableColumn = {
+  Header: string;
+  columns: Column[];
+};
+
+export type TableColumns = TableColumn[];
+
+export interface ModalProps {
+  isOpen: boolean;
+  hasCloseBtn?: boolean;
+  onClose?: () => void;
+  children?: React.ReactNode;
+  position?: { x: number; y: number };
+}

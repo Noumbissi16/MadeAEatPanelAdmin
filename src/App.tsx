@@ -15,7 +15,6 @@ import "./global.css";
 
 function App() {
   return (
-    // <div>
     <Routes>
       {/* public routes */}
 
@@ -34,7 +33,6 @@ function App() {
         <Route path="/commandes/commande/:id/facture" element={<Facture />} />
       </Route>
     </Routes>
-    // </div>
   );
 }
 
