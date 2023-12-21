@@ -3,26 +3,23 @@
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
-  /* row-gap: 28px; */
-  /* column-gap: 24px; */
   gap: 30px;
 }
 
 .card {
-  width: 330px;
+  max-width: 330px;
   height: 280px;
   flex-shrink: 0;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
+  width: 78vw;
 }
-
 .img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 .gradientContainer {
   padding: 20px;
   border-radius: 0px 0px 8px 8px;
@@ -57,4 +54,66 @@
   font-style: normal;
   font-weight: 500;
   line-height: 100%; /* 10px */
+}
+@media screen and (min-width: 600px) {
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .card {
+    width: 330px;
+    height: 280px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gradientContainer {
+    padding: 20px;
+    border-radius: 0px 0px 8px 8px;
+    background: linear-gradient(
+      180deg,
+      rgba(33, 33, 33, 0.05) 0%,
+      #313131 100%
+    );
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 57px;
+  }
+
+  .gradientContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nomResto {
+    overflow: hidden;
+    color: var(--white, #fff);
+    text-overflow: ellipsis;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .town {
+    color: var(--grey-light-grey, #bbc8d4);
+    font-family: Montserrat;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 10px */
+  }
 }
