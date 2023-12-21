@@ -1,8 +1,17 @@
 @import url("../../global.css");
 
+/* Styles for screens up to 600 pixels wide */
+@media only screen and (max-width: 600px) {
+  /* Your styles for small screens go here */
+  .contentContainer {
+    flex-direction: column;
+  }
+}
+
 .container {
   width: 100%;
   background-color: var(--backgroundColor);
+  /* background-color: red; */
   padding: 15px;
 }
 
@@ -21,6 +30,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: 28px; /* 140% */
+  margin: 0;
 }
 .user {
   display: flex;
@@ -64,4 +74,14 @@
   height: 13px;
   border: 2px solid var(--white);
   border-radius: 50px;
+}
+
+/* Styles for screens between 601 and 900 pixels wide */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  /* Your styles for medium screens go here */
+}
+
+/* Styles for screens 901 pixels wide and above */
+@media only screen and (min-width: 901px) {
+  /* Your styles for large screens go here */
 }

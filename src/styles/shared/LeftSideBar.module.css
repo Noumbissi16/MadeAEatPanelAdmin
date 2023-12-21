@@ -1,14 +1,23 @@
 @import url("../../global.css");
 
 .leftSideBar {
-  padding-top: 15px;
-  width: 280px;
+  position: sticky;
+  width: 250px;
+  padding-top: 40px;
   background-color: var(--primary-700);
   height: 100vh;
-  position: sticky;
+  z-index: 100;
   top: 0;
+  /* bottom: 0; */
 }
-
+.topSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 20px 15px; */
+  gap: 12px;
+  margin-bottom: 18px;
+}
 .logo {
   color: #fff;
   text-align: center;
@@ -16,16 +25,23 @@
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
-  line-height: 28px; /* 116.667% */
-  margin-bottom: 55px;
+}
+
+.bars {
+  margin-top: 5px;
+  font-size: 24px;
+  color: white;
 }
 
 .navLinkContainer {
   display: flex;
   flex-direction: column;
 }
+.link:hover {
+  /* background-color: var(--primary-200); */
+}
 .link {
-  padding: 24px;
+  padding: 18px;
   display: flex;
   cursor: pointer;
   gap: 16px;
@@ -37,11 +53,14 @@
 
   /* Paragraph */
   font-family: Montserrat;
-  font-size: 13px;
+  /* font-size: 13px; */
   font-style: normal;
   font-weight: 500;
   line-height: 18px; /* 138.462% */
 }
 .color {
   fill: var(--grey);
+}
+
+@media only screen and (min-width: 600px) {
 }
