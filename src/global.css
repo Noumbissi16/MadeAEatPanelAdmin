@@ -152,7 +152,7 @@ input::placeholder {
   right: 0.25em;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   thead {
     display: none;
   }

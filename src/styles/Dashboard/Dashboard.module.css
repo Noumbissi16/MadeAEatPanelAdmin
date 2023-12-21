@@ -28,9 +28,10 @@
   padding: 25px;
   border-radius: 24px;
   border: 1px solid var(--primary-200);
-  width: 328px;
+  max-width: 328px;
   height: 165px;
   flex-shrink: 0;
+  width: 78vw;
 }
 .flex {
   display: flex;
