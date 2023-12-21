@@ -1,47 +1,32 @@
 @import url("../../global.css");
 
-/* Styles for screens up to 600 pixels wide */
-@media only screen and (max-width: 600px) {
-  /* Your styles for small screens go here */
-  .contentContainer {
-    flex-direction: column;
-  }
-}
-
 .container {
   width: 100%;
   background-color: var(--backgroundColor);
-  /* background-color: red; */
   padding: 15px;
 }
-
 .contentContainer {
   width: 95%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* margin: 0 auto; */
 }
 .title {
   color: var(--grey, #6d7d8b);
-  text-align: center;
   font-family: Montserrat;
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 28px; /* 140% */
+  line-height: 28px;
   margin: 0;
+  margin-bottom: 5px;
 }
 .user {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 8px;
 }
 .username {
   color: var(--black);
   font-family: Montserrat;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -50,21 +35,22 @@
 .email {
   color: var(--tuto-grey);
   font-family: Montserrat;
-  font-size: 14px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
 }
 
 .img {
-  width: 50px;
-  height: 50px;
+  width: 35px;
   flex-shrink: 0;
   border-radius: 50px;
+  aspect-ratio: 1/1;
 }
 .imgContainer {
   position: relative;
 }
+
 .status {
   position: absolute;
   top: 0;
@@ -74,6 +60,76 @@
   height: 13px;
   border: 2px solid var(--white);
   border-radius: 50px;
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    width: 100%;
+    background-color: var(--backgroundColor);
+    /* background-color: red; */
+    padding: 15px;
+  }
+
+  .contentContainer {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .title {
+    color: var(--grey, #6d7d8b);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 140% */
+    margin: 0;
+  }
+  .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  .username {
+    color: var(--black);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .email {
+    color: var(--tuto-grey);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  .img {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 50px;
+  }
+  .imgContainer {
+    position: relative;
+  }
+  .status {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-500);
+    width: 13px;
+    height: 13px;
+    border: 2px solid var(--white);
+    border-radius: 50px;
+  }
 }
 
 /* Styles for screens between 601 and 900 pixels wide */
