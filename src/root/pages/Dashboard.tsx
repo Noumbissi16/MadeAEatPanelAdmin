@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { useSelector } from "react-redux";
 import { rootState } from "../../redux/store";
 import s from "../../styles/Dashboard/Dashboard.module.css";
@@ -148,6 +149,7 @@ function Dashboard() {
           </tbody>
         </table>
       </section>
+      <Button>See more</Button>
     </main>
   );
 }
