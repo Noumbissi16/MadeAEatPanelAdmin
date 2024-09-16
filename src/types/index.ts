@@ -5,11 +5,19 @@ export type INewUser = {
 };
 
 export type IUser = {
-  id: number;
+  id: string;
+  username: string;
+  email: string;
+  isAuthenticated: boolean;
+  agency: string;
+  token: string;
+};
+
+export type IUserDataLogin = {
+  agency: string;
   username: string;
   email: string;
   password: string;
-  isAuthenticated: boolean;
 };
 
 export type IAction = {

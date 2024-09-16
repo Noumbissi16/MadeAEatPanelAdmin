@@ -1,7 +1,22 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { LeftSideBar, TopBar } from "../components";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import { useEffect, useLayoutEffect } from "react";
 
 function RootLayout() {
+  const navigate = useNavigate();
+
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.user.isAuthenticated
+  );
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate("/sign-in");
+    }
+  }, [isAuthenticated]);
+
   return (
     <div
       style={{
@@ -11,7 +26,7 @@ function RootLayout() {
     >
       <LeftSideBar />
       <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
-        <TopBar />
+        {/* <TopBar /> */}
         <div
           style={{
             width: "93%",
@@ -20,7 +35,7 @@ function RootLayout() {
             paddingBottom: "25px",
           }}
         >
-          <Outlet />
+          {/* <Outlet /> */}
         </div>
       </div>
     </div>

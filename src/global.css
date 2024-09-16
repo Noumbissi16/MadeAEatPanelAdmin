@@ -5,13 +5,14 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: #f3fcf6;
+    --backgroundColor: #f3fcf6;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
+    --primary: #064d1c;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -30,6 +31,25 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --white: #fff;
+    --black: #000;
+    --blueBlack: #25313c;
+    /* primary colors */
+    --primary-100: #cff3da;
+    --primary-200: #9fe6b5;
+    --primary-300: #6fda91;
+    --primary-400: #3fcd6c;
+    --primary-500: #0fc147;
+    --primary-600: #09742b;
+    --primary-700: #064d1c;
+    --primary-800: #03270e;
+    --primary-900: #000000;
+
+    /* grey */
+    --grey: #6d7d8b;
+    --light-grey: #bbc8d4;
+    --extraLight-grey: #dae3ea;
+    --tuto-grey: #cccccc;
   }
 
   .dark {
@@ -61,50 +81,26 @@
 }
 
 @layer base {
-  * {
+  *,
+  ::after,
+  ::before {
     @apply border-border;
+    margin: 0;
+    padding: 0;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "Montserrat", sans-serif;
+  }
+}
+
+@layer components {
+  .shad-form_label {
+    @apply text-black !important;
   }
 }
 
 /* old css */
-
-*,
-::after,
-::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --white: #fff;
-  --black: #000;
-  --blueBlack: #25313c;
-  /* primary colors */
-  --primary-100: #cff3da;
-  --primary-200: #9fe6b5;
-  --primary-300: #6fda91;
-  --primary-400: #3fcd6c;
-  --primary-500: #0fc147;
-  --primary-600: #09742b;
-  --primary-700: #064d1c;
-  --primary-800: #03270e;
-  --primary-900: #000000;
-  --backgroundColor: #f3fcf6;
-
-  /* grey */
-  --grey: #6d7d8b;
-  --light-grey: #bbc8d4;
-  --extraLight-grey: #dae3ea;
-  --tuto-grey: #cccccc;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-}
 
 .active {
   border-left: 4px solid var(--white);
