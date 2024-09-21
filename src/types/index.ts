@@ -11,6 +11,7 @@ export type IUser = {
   isAuthenticated: boolean;
   agency: string;
   token: string;
+  profile: string;
 };
 
 export type IUserDataLogin = {

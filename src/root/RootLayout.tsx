@@ -3,6 +3,7 @@ import { LeftSideBar, TopBar } from "../components";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { useEffect, useLayoutEffect } from "react";
+import BottomBar from "@/components/shared/BottomBar";
 
 function RootLayout() {
   const navigate = useNavigate();
@@ -18,25 +19,13 @@ function RootLayout() {
   }, [isAuthenticated]);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        // width: "100vw"
-      }}
-    >
+    <div className="flex w-full">
       <LeftSideBar />
-      <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
-        {/* <TopBar /> */}
-        <div
-          style={{
-            width: "93%",
-            margin: "0 auto",
-            paddingTop: "25px",
-            paddingBottom: "25px",
-          }}
-        >
-          {/* <Outlet /> */}
-        </div>
+      <div className="flex flex-col flex-1">
+        <TopBar />
+
+        {/* <Outlet /> */}
+        <BottomBar />
       </div>
     </div>
   );

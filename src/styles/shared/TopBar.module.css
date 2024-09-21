@@ -1,20 +1,11 @@
 @import url("../../global.css");
 
-.container {
-  width: 100%;
-  background-color: var(--backgroundColor);
-  padding: 15px;
-}
-.contentContainer {
-  width: 95%;
-  /* margin: 0 auto; */
-}
 .title {
   color: var(--grey, #6d7d8b);
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 28px;
   margin: 0;
   margin-bottom: 5px;
@@ -63,13 +54,6 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .container {
-    width: 100%;
-    background-color: var(--backgroundColor);
-    /* background-color: red; */
-    padding: 15px;
-  }
-
   .contentContainer {
     width: 95%;
     margin: 0 auto;
@@ -81,9 +65,9 @@
     color: var(--grey, #6d7d8b);
     text-align: center;
     font-family: Montserrat;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 28px; /* 140% */
     margin: 0;
   }

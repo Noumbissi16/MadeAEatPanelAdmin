@@ -65,7 +65,7 @@ function SigninForm() {
         token: data.token,
         password: null,
       };
-      localStorage.setItem("token", data.token);
+      // localStorage.setItem("token", data.token);
       dispatch(createUser(user));
       navigate("/");
     } catch (error: any) {

@@ -1,13 +1,13 @@
 @import url("../../global.css");
 
 .leftSideBar {
-  position: sticky;
+  /* position: sticky; */
   width: 250px;
   padding-top: 40px;
   background-color: var(--primary-700);
   height: 100vh;
-  z-index: 100;
-  top: 0;
+  /* z-index: 100; */
+  /* top: 0; */
   /* bottom: 0; */
 }
 .topSection {
@@ -25,6 +25,7 @@
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
+  transition: all ease-in;
 }
 
 .bars {
@@ -41,13 +42,14 @@
   /* background-color: var(--primary-200); */
 }
 .link {
-  padding: 18px;
+  padding: 24px;
   display: flex;
   cursor: pointer;
-  gap: 16px;
+  gap: 24px;
   justify-content: center;
   align-items: center;
   text-decoration: none;
+
   /* color: #fff; */
   color: var(--grey, #6d7d8b);
 
@@ -56,11 +58,28 @@
   /* font-size: 13px; */
   font-style: normal;
   font-weight: 500;
+  transition: all ease-in;
+
   line-height: 18px; /* 138.462% */
 }
-.color {
+
+.link .color {
   fill: var(--grey);
 }
 
-@media only screen and (min-width: 600px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+  a p,
+  .logo {
+    display: none;
+  }
+  .leftSideBar {
+    width: 120px;
+    transition: all ease-in;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .leftSideBar {
+    display: none;
+  }
 }

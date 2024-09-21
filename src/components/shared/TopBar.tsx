@@ -1,22 +1,42 @@
 import { useSelector } from "react-redux";
-import { rootState } from "../../redux/store";
+import { RootState } from "../../redux/store";
 import s from "../../styles/shared/TopBar.module.css";
+import { MdAccountCircle } from "react-icons/md";
+import { HiOutlineLogout } from "react-icons/hi";
+import { useDispatch } from "react-redux";
+import { logOutUserAction } from "@/redux/slice/userSlice";
 const TopBar = () => {
-  const user = useSelector((state: rootState) => state.user.user);
+  const user = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch();
+  function logOutUser() {
+    console.log("login out");
 
+    dispatch(logOutUserAction());
+  }
   return (
-    <div className={s.container}>
-      <div className={s.contentContainer}>
-        <h2 className={s.title}>Panel Admin de Bafoussam</h2>
-        <div className={s.user}>
-          <div className={s.imgContainer}>
-            <div className={s.status} />
-            <img className={s.img} src={user.img} alt="ville restaurant" />
-          </div>
-          <div>
-            <h4 className={s.username}>{user.username}</h4>
-            <p className={s.email}>{user.email}</p>
-          </div>
+    <div
+      className={
+        "flex justify-between items-center bg-white py-3 px-6 drop-shadow-md"
+      }
+    >
+      <h2 className={s.title}>Panel Admin de Bafoussam</h2>
+      <div className={s.user + " items-center"}>
+        <div className={s.imgContainer}>
+          <div className={s.status} />
+          {user.profile !== null || "" ? (
+            <MdAccountCircle size={40} />
+          ) : (
+            <img className={s.img} src={user.profile} alt="profile" />
+          )}
+        </div>
+        <HiOutlineLogout
+          size={32}
+          className="hidden max-sm:block text-grey ml-1"
+          onClick={logOutUser}
+        />
+        <div className=" max-sm:hidden">
+          <h4 className={s.username + ""}>{user.username}</h4>
+          <p className={s.email}>{user.email}</p>
         </div>
       </div>
     </div>

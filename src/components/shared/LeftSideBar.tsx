@@ -1,40 +1,26 @@
 import { NavLink, useLocation } from "react-router-dom";
 import s from "../../styles/shared/LeftSideBar.module.css";
-import { useState } from "react";
-import { FaBars } from "react-icons/fa";
-
+import { HiOutlineLogout } from "react-icons/hi";
+import { useDispatch } from "react-redux";
+import { logOutUserAction } from "@/redux/slice/userSlice";
 const LeftSideBar = () => {
   const { pathname } = useLocation();
+  const dispatch = useDispatch();
 
-  const [showSideBar, setshowSideBar] = useState(false);
+  function logOutUser() {
+    console.log("login out");
+    dispatch(logOutUserAction());
+  }
 
   return (
-    <nav
-      className={s.leftSideBar}
-      style={{
-        width: showSideBar ? "250px" : "64px",
-        position: showSideBar ? "fixed" : "sticky",
-      }}
-    >
+    <nav className={s.leftSideBar}>
       <div className={s.topSection}>
-        <h1
-          style={{ display: showSideBar ? "block" : "none" }}
-          className={s.logo}
-        >
-          MadeAEat
-        </h1>
-        <div className={s.bars} onClick={() => setshowSideBar(!showSideBar)}>
-          <FaBars />
-        </div>
+        <h1 className={s.logo}>MadeAEat</h1>
       </div>
 
       <div>
         <ul className={s.navLinkContainer}>
-          <NavLink
-            to={"/"}
-            className={s.link}
-            onClick={() => setshowSideBar(false)}
-          >
+          <NavLink to={"/"} className={s.link}>
             <svg
               width="24"
               height="24"
@@ -53,13 +39,9 @@ const LeftSideBar = () => {
                 className={pathname !== "/" ? s.color : "white"}
               />
             </svg>
-            <p style={{ display: showSideBar ? "block" : "none" }}>Dashboard</p>
+            <p>Dashboard</p>
           </NavLink>
-          <NavLink
-            to={"/restaurants"}
-            className={s.link}
-            onClick={() => setshowSideBar(false)}
-          >
+          <NavLink to={"/restaurants"} className={s.link}>
             <svg
               width="24"
               height="24"
@@ -89,15 +71,9 @@ const LeftSideBar = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <p style={{ display: showSideBar ? "block" : "none" }}>
-              Restaurant
-            </p>
+            <p>Restaurant</p>
           </NavLink>
-          <NavLink
-            to={"/utilisateurs"}
-            className={s.link}
-            onClick={() => setshowSideBar(false)}
-          >
+          <NavLink to={"/utilisateurs"} className={s.link}>
             <svg
               width="24"
               height="24"
@@ -110,15 +86,9 @@ const LeftSideBar = () => {
                 fill={pathname !== "/utilisateurs" ? "#6d7d8b" : "white"}
               />
             </svg>
-            <p style={{ display: showSideBar ? "block" : "none" }}>
-              Utiliasteur
-            </p>
+            <p>Utiliasteur</p>
           </NavLink>
-          <NavLink
-            to={"/commandes"}
-            className={s.link}
-            onClick={() => setshowSideBar(false)}
-          >
+          <NavLink to={"/commandes"} className={s.link}>
             <svg
               width="32"
               height="32"
@@ -135,9 +105,15 @@ const LeftSideBar = () => {
                 fill={pathname !== "/commandes" ? "#6d7d8b" : "white"}
               />
             </svg>
-            <p style={{ display: showSideBar ? "block" : "none" }}>Commande</p>
+            <p>Commande</p>
           </NavLink>
         </ul>
+      </div>
+      <div onClick={logOutUser}>
+        <a className={s.link + " absolute bottom-3 left-3"}>
+          <HiOutlineLogout size={32} className="text-grey cursor-pointer" />
+          <p>Deconnexion</p>
+        </a>
       </div>
     </nav>
   );
