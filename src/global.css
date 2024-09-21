@@ -94,6 +94,9 @@
   }
 }
 
+@layer utilities {
+}
+
 @layer components {
   .shad-form_label {
     @apply text-black !important;

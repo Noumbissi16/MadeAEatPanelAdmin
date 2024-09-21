@@ -5,14 +5,23 @@ import { MdAccountCircle } from "react-icons/md";
 import { HiOutlineLogout } from "react-icons/hi";
 import { useDispatch } from "react-redux";
 import { logOutUserAction } from "@/redux/slice/userSlice";
+import { useNavigate } from "react-router-dom";
+import React, { MouseEventHandler } from "react";
 const TopBar = () => {
   const user = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   function logOutUser() {
     console.log("login out");
 
     dispatch(logOutUserAction());
   }
+
+  function handleClickProfile(e: any) {
+    navigate("/profile");
+    // e.stopPropagation();
+  }
+
   return (
     <div
       className={
@@ -20,7 +29,10 @@ const TopBar = () => {
       }
     >
       <h2 className={s.title}>Panel Admin de Bafoussam</h2>
-      <div className={s.user + " items-center"}>
+      <div
+        className={s.user + " items-center cursor-pointer"}
+        onClick={handleClickProfile}
+      >
         <div className={s.imgContainer}>
           <div className={s.status} />
           {user.profile !== null || "" ? (

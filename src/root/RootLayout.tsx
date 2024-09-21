@@ -2,7 +2,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { LeftSideBar, TopBar } from "../components";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 import BottomBar from "@/components/shared/BottomBar";
 
 function RootLayout() {
@@ -24,7 +24,9 @@ function RootLayout() {
       <div className="flex flex-col flex-1">
         <TopBar />
 
-        {/* <Outlet /> */}
+        <div className="py-5 px-4 lg:pt-10 lg:pl-10">
+          <Outlet />
+        </div>
         <BottomBar />
       </div>
     </div>

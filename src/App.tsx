@@ -4,6 +4,7 @@ import {
   Commande,
   Dashboard,
   Facture,
+  Profile,
   Restaurant,
   SingleRestaurant,
   Utilisateur,
@@ -29,9 +30,12 @@ function App() {
         <Route path="/commandes" element={<Commande />} />
         <Route path="/utilisateurs" element={<Utilisateur />} />
         <Route path="/restaurants" element={<Restaurant />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/restaurants/:id" element={<SingleRestaurant />} />
         <Route path="/commandes/commande/:id/facture" element={<Facture />} />
       </Route>
+
+      <Route path="*" element={<h1>Not found</h1>} />
     </Routes>
   );
 }

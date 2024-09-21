@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { useSelector } from "react-redux";
-import { rootState } from "../../redux/store";
+import { RootState } from "../../redux/store";
 import s from "../../styles/Dashboard/Dashboard.module.css";
 
 function Dashboard() {
-  const user = useSelector((state: rootState) => state.user.user);
+  const user = useSelector((state: RootState) => state.user);
 
   return (
     <main>
