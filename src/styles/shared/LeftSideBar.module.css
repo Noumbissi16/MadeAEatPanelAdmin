@@ -1,14 +1,14 @@
 @import url("../../global.css");
 
 .leftSideBar {
-  /* position: sticky; */
+  position: sticky;
   width: 250px;
   padding-top: 40px;
   background-color: var(--primary-700);
   height: 100vh;
   /* z-index: 100; */
-  /* top: 0; */
-  /* bottom: 0; */
+  top: 0;
+  bottom: 0;
 }
 .topSection {
   display: flex;

@@ -36,7 +36,12 @@ const TopBar = () => {
         <div className={s.imgContainer}>
           <div className={s.status} />
           {user.profile !== null || "" ? (
-            <MdAccountCircle size={40} />
+            // <MdAccountCircle size={40} />
+            <img
+              className={s.img}
+              src="/assets/images/DefaultProfil.jpg"
+              alt="profile"
+            />
           ) : (
             <img className={s.img} src={user.profile} alt="profile" />
           )}
