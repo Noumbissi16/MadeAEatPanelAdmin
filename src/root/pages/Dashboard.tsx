@@ -13,12 +13,12 @@ function Dashboard() {
           <h1 className="title">Dashboard</h1>
           <p className={s.welcomeMsg}>Bienvenue, {user.username}</p>
         </div>
-        <select name="dsjkjds" id="" value={"dsds"}>
+        {/* <select name="dsjkjds" id="" value={"dsds"}>
           <option value="choisir la period" key="jkjewk"></option>
-        </select>
+        </select> */}
       </header>
       <section className={s.statsSection}>
-        <div className={s.card}>
+        <div className={`${s.card}`}>
           <div className={s.flex}>
             <span className={s.cardTitle}>Commande</span>
             <svg
@@ -149,7 +149,6 @@ function Dashboard() {
           </tbody>
         </table>
       </section>
-      <Button>See more</Button>
     </main>
   );
 }

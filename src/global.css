@@ -101,6 +101,9 @@
   .shad-form_label {
     @apply text-black !important;
   }
+  .card {
+    @apply w-full sm:w-72;
+  }
 }
 
 /* old css */
