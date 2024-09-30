@@ -1,15 +1,16 @@
 import { IUser } from "@/types";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 // Define the initial state outside the slice for reuse
 const initialState: IUser = {
-  id: "",
+  _id: "",
   username: "",
   email: "",
   isAuthenticated: false,
-  agency: "",
+  agence: "",
   token: "",
-  profile: "",
+  profileImage: "",
+  profileAgence: ""
 };
 
 const userSlice = createSlice({
@@ -22,9 +23,14 @@ const userSlice = createSlice({
     logOutUserAction: () => {
       return initialState;
     },
+    updateUser: (state, action) => {
+      // return { ...state, ...action.payload }
+      state = { ...state, ...action.payload }
+      return state
+    }
   },
 });
 
-export const { createUser, logOutUserAction } = userSlice.actions;
+export const { createUser, logOutUserAction, updateUser } = userSlice.actions;
 
 export default userSlice.reducer;

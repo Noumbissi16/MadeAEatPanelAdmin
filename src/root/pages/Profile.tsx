@@ -15,36 +15,49 @@ import { Input } from "@/components/ui/input";
 import React, { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { updateUser } from "@/redux/slice/userSlice";
+import { useNavigate } from "react-router-dom";
+import Loading from "@/components/shared/Loader";
 
 const Profile = () => {
   const user = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const inputRefAdmin = useRef<HTMLInputElement | null>(null);
   const inputRefResto = useRef<HTMLInputElement | null>(null);
+
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
+
   const [imgAdmin, setimgAdmin] = useState<File>();
-  const [selectedimgAdminUrl, setSelectedimgAdminUrl] = useState<string>("");
+  const [selectedimgAdminUrl, setSelectedimgAdminUrl] = useState<string>(user.profileImage);
 
   const [imgResto, setimgResto] = useState<File>();
-  const [selectedimgRestoUrl, setSelectedimgRestoUrl] = useState<string>("");
+  const [selectedimgRestoUrl, setSelectedimgRestoUrl] = useState<string>(user.profileAgence);
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof profileFormSchema>>({
     resolver: zodResolver(profileFormSchema),
     defaultValues: {
-      username: user.username,
-      agency: user.agency,
+      name: user.username,
+      agence: user.agence,
     },
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof profileFormSchema>) {
+  async function onSubmit(values: z.infer<typeof profileFormSchema>) {
+    setIsLoading(true);
+    setError("");
     let formData = new FormData();
     // Append the file if it exists
     if (imgAdmin) {
-      formData.append("file", imgAdmin);
+      formData.append("profileImage", imgAdmin);
     }
     if (imgResto) {
-      formData.append("file", imgResto);
+      formData.append("profileAgence", imgResto);
     }
 
     // Automatically append all key-value pairs from values
@@ -52,7 +65,27 @@ const Profile = () => {
       formData.append(key, value);
     });
 
-    //    TODO: Submit to backend : URL not yet implemented
+    try {
+      const result = await axios.post("https://api-madeaeat.vercel.app/api/v1/agence/profile",
+        formData,
+        {
+          headers: {
+            "Authorization": `Bearer ${user.token}`
+          }
+        }
+      )
+      // console.log(result.data.user)
+
+      dispatch(updateUser(result.data.user))
+      navigate("/")
+
+    } catch (error: any) {
+      console.log(error.response.data)
+      setError(error.response.data.msg);
+    } finally {
+      setIsLoading(false)
+    }
+
   }
 
   function handleImageClickAdmin() {
@@ -88,6 +121,7 @@ const Profile = () => {
   return (
     <main>
       <h1 className="title">Profile</h1>
+      {error && <p className="my-4 text-red-400 mb-1">{error}</p>}
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <div className="flex">
@@ -119,7 +153,7 @@ const Profile = () => {
 
           <FormField
             control={form.control}
-            name="username"
+            name="name"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Nom gerant</FormLabel>
@@ -133,7 +167,7 @@ const Profile = () => {
 
           <FormField
             control={form.control}
-            name="agency"
+            name="agence"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Localisation agence</FormLabel>
@@ -174,9 +208,15 @@ const Profile = () => {
 
           <div className="flex flex-row-reverse max-sm:flex-col gap-3">
             <Button type="submit" className="">
-              Valider
+              {isLoading ? (
+                <div className="flex-center flex-row gap-2">
+                  <Loading />
+                </div>
+              ) : (
+                "Valider"
+              )}
             </Button>
-            <Button type="button" className="" variant={"outline"}>
+            <Button type="button" className="" variant={"outline"} onClick={() => navigate("/")}>
               Annuler
             </Button>
           </div>

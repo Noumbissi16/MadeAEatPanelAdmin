@@ -1,12 +1,10 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import s from "../../styles/shared/TopBar.module.css";
-import { MdAccountCircle } from "react-icons/md";
 import { HiOutlineLogout } from "react-icons/hi";
 import { useDispatch } from "react-redux";
 import { logOutUserAction } from "@/redux/slice/userSlice";
 import { useNavigate } from "react-router-dom";
-import React, { MouseEventHandler } from "react";
 const TopBar = () => {
   const user = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
@@ -35,15 +33,15 @@ const TopBar = () => {
       >
         <div className={s.imgContainer}>
           <div className={s.status} />
-          {user.profile !== null || "" ? (
+          {user.profileImage !== null || "" ? (
             // <MdAccountCircle size={40} />
-            <img
-              className={s.img}
-              src="/assets/images/DefaultProfil.jpg"
-              alt="profile"
-            />
-          ) : (
-            <img className={s.img} src={user.profile} alt="profile" />
+            <img className={s.img} src={user.profileImage} alt="profile" />
+
+          ) : (<img
+            className={s.img}
+            src="/assets/images/DefaultProfil.jpg"
+            alt="profile"
+          />
           )}
         </div>
         <HiOutlineLogout

@@ -5,13 +5,14 @@ export type INewUser = {
 };
 
 export type IUser = {
-  id: string;
+  _id: string;
   username: string;
   email: string;
   isAuthenticated: boolean;
-  agency: string;
+  agence: string;
   token: string;
-  profile: string;
+  profileImage: string;
+  profileAgence: string
 };
 
 export type IUserDataLogin = {

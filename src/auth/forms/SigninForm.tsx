@@ -29,7 +29,6 @@ import { loginFormSchema } from "@/lib/validations";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createUser } from "@/redux/slice/userSlice";
-import { IUserDataLogin } from "@/types";
 import axios from "axios";
 import { useState } from "react";
 import Loading from "@/components/shared/Loader";
@@ -107,9 +106,9 @@ function SigninForm() {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="agency1">Agence 1</SelectItem>
-                        <SelectItem value="agency2">Agence 2</SelectItem>
-                        <SelectItem value="agency3">Agence 3</SelectItem>
+                        <SelectItem value="agency1">Douala</SelectItem>
+                        <SelectItem value="agency2">Bafoussam</SelectItem>
+                        <SelectItem value="agency3">Yaounde</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
