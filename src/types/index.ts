@@ -41,17 +41,18 @@ export type MenuItem = {
   desc: string;
 };
 
+
+
 export type IRestaurant = {
-  id: number;
-  ouvert: boolean;
-  nomResto: string;
-  town: string;
-  localisation: string;
-  imgAdmin: string;
-  imgResto: string;
-  horraire: string;
-  menu: MenuItem[];
+  _id: string;
+  name: string;
+  ville: string;
+  location: string;
+  ownedBy: string;
+  profile: string;
 };
+
+
 
 export type Column = {
   Header: string;

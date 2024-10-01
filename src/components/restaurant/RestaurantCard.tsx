@@ -6,17 +6,17 @@ const RestaurantCard: React.FC<{ restaurant: IRestaurant }> = ({
   restaurant,
 }) => {
   return (
-    <Link to={`/restaurants/${restaurant.id}`}>
+    <Link to={`/restaurants/${restaurant._id}`}>
       <div className={s.card}>
         <img
-          src={restaurant.imgResto}
-          alt={restaurant.nomResto}
+          src={restaurant.profile}
+          alt={restaurant.name}
           className={s.img}
         />
         <div className={s.gradientContainer}>
           <div className={s.gradientContent}>
-            <p className={s.nomResto}>{restaurant.nomResto}</p>
-            <p className={s.town}>{restaurant.town}</p>
+            <p className={s.nomResto}>{restaurant.name}</p>
+            <p className={s.town}>{restaurant.ville}</p>
           </div>
         </div>
       </div>

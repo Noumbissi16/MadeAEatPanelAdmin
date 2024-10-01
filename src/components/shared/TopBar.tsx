@@ -46,10 +46,10 @@ const TopBar = () => {
         </div>
         <HiOutlineLogout
           size={32}
-          className="hidden max-sm:block text-grey ml-1"
+          className="hidden max-md:block text-grey ml-1"
           onClick={logOutUser}
         />
-        <div className=" max-sm:hidden">
+        <div className="max-md:hidden">
           <h4 className={s.username + ""}>{user.username}</h4>
           <p className={s.email}>{user.email}</p>
         </div>

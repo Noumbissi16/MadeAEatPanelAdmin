@@ -7,7 +7,7 @@ function Dashboard() {
   const user = useSelector((state: RootState) => state.user);
 
   return (
-    <main>
+    <main className="h-full">
       <header className={s.header}>
         <div>
           <h1 className="title">Dashboard</h1>

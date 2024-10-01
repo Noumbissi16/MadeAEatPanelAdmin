@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 const BottomBar = () => {
   const { pathname } = useLocation();
   return (
-    <nav className="sticky  bg-primary  w-full bottom-0 h-[85px] md:hidden">
+    <nav className="sticky bg-primary w-full bottom-0 left-0 right-0 h-[85px] md:hidden">
       <ul className="flex w-full  justify-around items-center">
         {bottomBarLinks.map((btmLink) => {
           const isActive = pathname === btmLink.route;
@@ -16,9 +16,8 @@ const BottomBar = () => {
               >
                 <img src={btmLink.imgURL} alt={btmLink.label} />
                 <p
-                  className={`${
-                    isActive && "text-[14px] text-white"
-                  } text-[12px] text-grey`}
+                  className={`${isActive && "text-[14px] text-white"
+                    } text-[12px] text-grey`}
                 >
                   {btmLink.label}
                 </p>

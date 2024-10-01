@@ -19,12 +19,12 @@ function RootLayout() {
   }, [isAuthenticated]);
 
   return (
-    <div className="flex w-full">
+    <div className="flex w-full ">
       <LeftSideBar />
       <div className="flex flex-col flex-1">
         <TopBar />
 
-        <div className="py-5 px-4 lg:pt-10 lg:pl-10">
+        <div className="py-5 px-4 lg:pt-10 lg:pl-10 h-screen">
           <Outlet />
         </div>
         <BottomBar />
