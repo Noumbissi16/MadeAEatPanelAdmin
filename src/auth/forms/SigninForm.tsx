@@ -32,6 +32,7 @@ import { createUser } from "@/redux/slice/userSlice";
 import axios from "axios";
 import { useState } from "react";
 import Loading from "@/components/shared/Loader";
+import { DEV_BACKEND_BASE_URL } from "@/constants";
 
 function SigninForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -50,12 +51,12 @@ function SigninForm() {
   });
 
   async function onSubmit(values: z.infer<typeof loginFormSchema>) {
-    console.log(values);
+    console.log(values.agency);
     setIsLoading(true);
     setError("");
     try {
       const result = await axios.post(
-        "https://api-madeaeat.vercel.app/api/v1/auth/agence/signin-agence",
+        `${DEV_BACKEND_BASE_URL}/auth/agence/signin-agence`,
         values
       );
       const data = result.data;
@@ -106,9 +107,9 @@ function SigninForm() {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="agency1">Douala</SelectItem>
-                        <SelectItem value="agency2">Bafoussam</SelectItem>
-                        <SelectItem value="agency3">Yaounde</SelectItem>
+                        <SelectItem value="Douala">Douala</SelectItem>
+                        <SelectItem value="Bafoussam">Bafoussam</SelectItem>
+                        <SelectItem value="Yaounde">Yaounde</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />

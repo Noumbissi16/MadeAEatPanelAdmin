@@ -9,7 +9,7 @@ export type IUser = {
   username: string;
   email: string;
   isAuthenticated: boolean;
-  agence: string;
+  agency: string;
   token: string;
   profileImage: string;
   profileAgence: string

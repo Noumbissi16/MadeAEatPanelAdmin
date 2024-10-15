@@ -33,15 +33,15 @@ const TopBar = () => {
       >
         <div className={s.imgContainer}>
           <div className={s.status} />
-          {user.profileImage !== null || "" ? (
-            // <MdAccountCircle size={40} />
+          {user.profileImage !== null ? (
             <img className={s.img} src={user.profileImage} alt="profile" />
 
-          ) : (<img
-            className={s.img}
-            src="/assets/images/DefaultProfil.jpg"
-            alt="profile"
-          />
+          ) : (
+            <img
+              className={s.img}
+              src="/assets/images/DefaultProfil.jpg"
+              alt="profile"
+            />
           )}
         </div>
         <HiOutlineLogout

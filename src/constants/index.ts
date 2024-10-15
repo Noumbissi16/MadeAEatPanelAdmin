@@ -53,3 +53,8 @@ export const bottomBarLinks = [
   //   label: "Deconnexion",
   // },
 ];
+
+
+export const DEV_BACKEND_BASE_URL = "http://localhost:8000/api/v1";
+
+export const PROD_BACKEND_BASE_URL = "https://api-madeaeat.vercel.app/api/v1";

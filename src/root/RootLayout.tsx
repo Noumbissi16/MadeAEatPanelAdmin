@@ -24,7 +24,7 @@ function RootLayout() {
       <div className="flex flex-col flex-1">
         <TopBar />
 
-        <div className="py-5 px-4 lg:pt-10 lg:pl-10 h-screen">
+        <div className="py-5 px-4 lg:pt-10 lg:pl-10">
           <Outlet />
         </div>
         <BottomBar />

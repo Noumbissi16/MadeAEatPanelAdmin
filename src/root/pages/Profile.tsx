@@ -20,6 +20,7 @@ import { useDispatch } from "react-redux";
 import { updateUser } from "@/redux/slice/userSlice";
 import { useNavigate } from "react-router-dom";
 import Loading from "@/components/shared/Loader";
+import { DEV_BACKEND_BASE_URL } from "@/constants";
 
 const Profile = () => {
   const user = useSelector((state: RootState) => state.user);
@@ -43,7 +44,7 @@ const Profile = () => {
     resolver: zodResolver(profileFormSchema),
     defaultValues: {
       name: user.username,
-      agence: user.agence,
+      agence: user.agency,
     },
   });
 
@@ -66,7 +67,7 @@ const Profile = () => {
     });
 
     try {
-      const result = await axios.post("https://api-madeaeat.vercel.app/api/v1/agence/profile",
+      const result = await axios.post(`${DEV_BACKEND_BASE_URL}/agence/profile`,
         formData,
         {
           headers: {
@@ -74,14 +75,13 @@ const Profile = () => {
           }
         }
       )
-      // console.log(result.data.user)
 
       dispatch(updateUser(result.data.user))
       navigate("/")
 
     } catch (error: any) {
       console.log(error.response.data)
-      setError(error.response.data.msg);
+      setError(error.response.data);
     } finally {
       setIsLoading(false)
     }

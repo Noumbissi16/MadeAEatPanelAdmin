@@ -7,7 +7,7 @@ const initialState: IUser = {
   username: "",
   email: "",
   isAuthenticated: false,
-  agence: "",
+  agency: "",
   token: "",
   profileImage: "",
   profileAgence: ""
@@ -18,7 +18,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     createUser: (state, action) => {
-      return { ...state, ...action.payload, isAuthenticated: true };
+      return { ...state, ...action.payload, isAuthenticated: true, profileImage: null };
     },
     logOutUserAction: () => {
       return initialState;
