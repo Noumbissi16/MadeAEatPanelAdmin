@@ -34,13 +34,13 @@ const Restaurant = () => {
       }
     }
     fetchRestaurant()
-  }, [])
+  }, [user.token])
 
 
 
 
   return (
-    <section className="h-full">
+    <section className="h-full w-full">
       <h1 className="title">Restaurant</h1>
       {
 
@@ -54,11 +54,11 @@ const Restaurant = () => {
             restaurants.length === 0 ? (<>
               <p>No restaurant available for now</p>
             </>) :
-              <div className={s.cardContainer}>
+              <section className={s.cardContainer + " w-full h-fit"}>
                 {restaurants.map((restaurant) => (
                   <RestaurantCard key={restaurant._id} restaurant={restaurant} />
                 ))}
-              </div>
+              </section>
       }
     </section>
   );

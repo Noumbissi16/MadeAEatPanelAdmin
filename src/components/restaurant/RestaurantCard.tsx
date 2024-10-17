@@ -6,8 +6,8 @@ const RestaurantCard: React.FC<{ restaurant: IRestaurant }> = ({
   restaurant,
 }) => {
   return (
-    <Link to={`/restaurants/${restaurant._id}`}>
-      <div className={s.card}>
+    <div className="h-72 overflow-hidden relative rounded-[8px] flex-shrink-0 max-sm:w-full w-[300px]">
+      <Link to={`/restaurants/${restaurant._id}`}>
         <img
           src={restaurant.profile}
           alt={restaurant.name}
@@ -19,8 +19,8 @@ const RestaurantCard: React.FC<{ restaurant: IRestaurant }> = ({
             <p className={s.town}>{restaurant.ville}</p>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 

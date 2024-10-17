@@ -52,6 +52,28 @@ export type IRestaurant = {
   profile: string;
 };
 
+export type RestaurantInfos = {
+  closingHour: string;
+  commandes: any[]; // Depending on what 'commandes' should contain, replace `any` with a more specific type if known.
+  createdAt: string;
+  location: string;
+  menus: any[]; // Same as 'commandes', use a more specific type if available.
+  name: string;
+  openingDays: string[];
+  openingHour: string;
+  ownedBy: {
+    _id: string;
+    name: string;
+    email: string;
+    profileImage: string;
+  };
+  phoneNumber: string;
+  profile: string;
+  updatedAt: string;
+  ville: string;
+  __v: number;
+  _id: string;
+};
 
 
 export type Column = {
